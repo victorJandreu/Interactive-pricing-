@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="style.css">
   
   <title>Frontend Mentor | Interactive pricing component</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+  </style>
 
 
 </head>
@@ -18,25 +21,41 @@
   </header>
   
   <main>
-    <section>
-      <p><span></span>Pageviews</p>
-      <div class="chrome"></div>
-      <input id="range" class="styled-slider slider-progress" type="range" id="slide" name="slide" min="0" max="100" value="60" step="25" />
+    <section class="grid">
+      <p class="pageviews"><span id="pageV">100k</span> Pageviews</p>
+      <input id="range" type="range" id="slide" name="slide" min="0" max="100" value="60" step="25" />
+      <p class="total-money"><span>$</span><span id="dinero">16.00</span> <span class="small">/ month</span></p>
+      <div>
+        <p>Monthly Billing</p>
+        <div id="btn-div" class="btn-father">
+          <button></button>
+        </div>
+        <p>Yearly Billing <span class="discount">25% <span>discount</span></span></p>
+      </div>
     </section>
+    <hr>
+    <div class="flex">
+      <div>
+        <p><svg xmlns="http://www.w3.org/2000/svg" width="9" height="8"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg> Unlimited websites</p>
+        <p><svg xmlns="http://www.w3.org/2000/svg" width="9" height="8"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg> 100% data ownership</p>
+        <p><svg xmlns="http://www.w3.org/2000/svg" width="9" height="8"><path fill="none" stroke="#10D8C4" stroke-width="2" d="M1 4.134l1.907 1.908L7.949 1"/></svg> Email reports</p>
+      </div>
+      <button class="start">Start my trial</button>
+    </div>
   </main>
   
 
   
-  $ /month
+   
 
-  Monthly Billing
-  Yearly Billing 25% discount
+  
+   
 
-  Unlimited websites
-  100% data ownership
-  Email reports
+  
+  
+  
 
-  Start my trial
+  
   
   <script src="./main.js"></script>
 </body>

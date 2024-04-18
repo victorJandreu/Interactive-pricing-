@@ -1,52 +1,248 @@
 
+:root{
+  --altura-linea:  .5rem;
+  --altura-boton: 2.4rem;
+  --white: hsl(0, 0%, 100%);
+  --dark-blue:  hsl(227, 35%, 25%);
+  --grayish-blue: hsl(225, 20%, 60%);
+  --main-color: hsl(230, 100%, 99%);
+  --pading-inline: 1.5rem;
+  --CTA-text: hsl(226, 100%, 87%);
+}
 
+.active{
+  background-color: hsl(174, 86%, 45%) !important;
+}
 
-
-
-
-
-
-
-
+*{
+  box-sizing: border-box;
+}
 
 body{
-    background-color: lightcoral;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  place-content: center;
+  gap: 30px;
+  background-color: var(--white);
+  font-family: "Manrope", sans-serif;
+  background-image: url("./images/bg-pattern.svg");
+ background-size: 100% 33%;
+  background-repeat: no-repeat;
+
+  text-align: center;
+  font-size: 15px;
+}
+
+h1{
+  color: var(--dark-blue);
+  margin-bottom: 0;
+}
+
+p{
+  color: var(--grayish-blue);
+}
+
+main, header{
+  width: 90vw;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+header{
+  background-image: url("./images/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding-inline: var(--pading-inline);
+}
+
+
+main{
+  background-color: var(--main-color);
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px  var(--grayish-blue);
+  padding-bottom: 2rem;
+}
+
+section, .flex{
+  padding-inline: var(--pading-inline);
+}
+
+section{
+  padding-block: 1.5rem;
+}
+section div{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+}
+
+.pageviews{
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  font-weight: 700;
+  font-size: .9em;
+  margin-bottom: 2rem;
+}
+
+.total-money{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.total-money span{
+  font-size: 2em;
+  color: var(--dark-blue);
+  font-weight: 700;
+}
+
+.total-money .small{
+  font-size: 1em;
+  color: var(--grayish-blue);
+  font-weight: 400;
+  padding-left: 10px;
+}
+
+.btn-father{
+  background-color: hsl(223, 50%, 87%);
+  width: 55px;
+  height: 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  position: relative;
+}
+
+.btn-father button{
+  position: absolute;
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  border: none;
+  
+  background-color: var(--white);
+  cursor: pointer;
+}
+
+.discount{
+  background-color: hsl(14, 92%, 95%);
+  color: hsl(15, 100%, 70%);
+  margin-left: 5px;
+  padding: 2px 13px;
+  border-radius: 30px;
+  font-size: .8em;
+  font-weight: 700;
+}
+
+.discount span{
+  display: none;
+}
+
+hr{
+  border: 1px solid var(--grayish-blue);
+  opacity: .1;
+}
+
+div svg{
+  margin-right: .5rem;
+}
+
+.start{
+  background-color: var(--dark-blue);
+  color: var(--main-color);
+  border: none;
+  padding: .9rem 4rem;
+  border-radius: 30px;
+  margin-top: 1.5rem;
+}
+
+
+
+@media (min-width: 600px) {
+  :root{
+    --pading-inline: 2rem;
+  }
+
+  .flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  .pageviews{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    align-self: center;
+    text-align: left;
+    margin: 0;
+  }
+  input{
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    margin: 1.4rem 0 1.6rem;
+  }
+  .grid div{
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+  }
+  .total-money{
+    grid-column:  2 / 3;
+    grid-row: 1 / 2;
+    align-self: center;
+    margin: 0;
+    padding-right: 0;
+    justify-self: end;
+  }
+ 
+
+  .flex div p{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .start{
+    margin: 0;
+  }
+
 }
 
 
 
 
-:root{
-    --altura-linea:  .5rem;
-    --altura-boton: 2rem;
-}
+/* input range */
 
 input[type="range"] {
     -webkit-appearance: none;
     appearance: none;
     cursor: pointer;
-    width: 15rem;
+    width: 100%; /* la anchura del input */
     border-radius: 30px;
-    background: #273549;
-    background-image: linear-gradient(#7DD3FC, #7DD3FC);
+    background: hsl(224, 65%, 95%); /* lo no marcado en la linea */
+    background-image: linear-gradient( hsl(174, 77%, 80%), hsl(174, 77%, 80%)); /* lo que se marcara en la linea si quieres que sea del mimos color pon los dos iguales*/
     background-size: 50% 100%;
     background-repeat: no-repeat;
     height: var(--altura-linea);
   }
 
-  /* la linea */
-
- 
-
+/* la linea */
+  /* para la mayoria de los navegadores establecer la altura de la linea */
   input[type="range"]::-webkit-slider-runnable-track {
     background: transparent;
     height: var(--altura-linea);
   }
 
-
-  
   /******** Firefox ********/
- 
   input[type="range"]::-moz-range-track {
     background: transparent;
     height: var(--altura-linea);
@@ -54,7 +250,9 @@ input[type="range"] {
 
   
 
-  /* el boton */
+/* el boton con el movemos la linea */
+
+  /* para la mayoría de los navegadores */
   input[type="range"]::-webkit-slider-thumb {
     box-sizing: border-box;
     position: relative;
@@ -62,45 +260,56 @@ input[type="range"] {
     appearance: none;
     border: none; /* si quieres ponerle borde */
     margin-top: calc((var(--altura-linea) / 2) - (var(--altura-boton) / 2)); /* Centers thumb on the track */
-    background-color: #5cd5eb;
+    background: hsl(174, 86%, 45%);
     height: var(--altura-boton);
-    width: var(--altura-boton);   /* porque quiero un circulo pero podrias poner cualquier cosa o un clip */ 
+    width: var(--altura-boton);   /* porque quiero un circulo pero podrias poner cualquier cosa o un clip el estado por defecto es un cuadrado */ 
     border-radius: 100%;
+    background-image: url("./images/icon-slider.svg"); /* para poner la imagen de los dos triangulos dentro del */
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0px 10px 20px hsl(174, 77%, 80%);
     
  }
 
- /***** Firefox *****/
-input[type="range"]::-moz-range-thumb {
-    box-sizing: border-box;
-    position: relative;
-    border: none; /*Removes extra border that FF applies*/
-    border-radius: 0; /*Removes default border-radius that FF applies*/
-    background-color: #5cd5eb;
-    height: var(--altura-boton);
-    width: var(--altura-boton);
-    border-radius: 100%;
-    
-}
+ input[type="range"]::-webkit-slider-thumb:active{
+  cursor:grabbing
+ }
+
+     /***** Firefox *****/
+     input[type="range"]::-webkit-slider-thumb {
+      box-sizing: border-box;
+      position: relative;
+      -webkit-appearance: none; /* Override default look */
+      appearance: none;
+      border: none; /* si quieres ponerle borde */
+      margin-top: calc((var(--altura-linea) / 2) - (var(--altura-boton) / 2)); /* Centers thumb on the track */
+      background: hsl(174, 86%, 45%);
+      height: var(--altura-boton);
+      width: var(--altura-boton);   /* porque quiero un circulo pero podrias poner cualquier cosa o un clip el estado por defecto es un cuadrado */ 
+      border-radius: 100%;
+      background-image: url("./images/icon-slider.svg"); /* para poner la imagen de los dos triangulos dentro del */
+      background-repeat: no-repeat;
+      background-position: center;
+      box-shadow: 0px 10px 20px hsl(174, 77%, 80%);
+   }
+  
 
  /***** Focus Styles para que se centre en el boton *****/
-/* Removes default focus */
-input[type="range"]:focus {
-    outline: none;
-  }
+    /* Removes default focus */
+    input[type="range"]:focus {
+        outline: none;
+    }
   
   /***** Chrome, Safari, Opera, and Edge Chromium *****/
   input[type="range"]:focus::-webkit-slider-thumb {
-    border: 1px solid #053a5f;
-    outline: 3px solid #053a5f;
+    outline: 1px solid #012101bc;
     outline-offset: 0.125rem;
   }
   
   /******** Firefox ********/
   input[type="range"]:focus::-moz-range-thumb {
-    border: 1px solid #053a5f;
-    outline: 3px solid #053a5f;
-    outline-offset: 0.125rem;     
-    
+    outline: 1px solid #012101bc;
+    outline-offset: 0.125rem;
   }
 
 
