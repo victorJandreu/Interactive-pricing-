@@ -31,6 +31,7 @@ input[type="range"] {
     background-image: linear-gradient(#7DD3FC, #7DD3FC);
     background-size: 50% 100%;
     background-repeat: no-repeat;
+    height: var(--altura-linea);
   }
 
   /* la linea */
@@ -45,14 +46,12 @@ input[type="range"] {
 
   
   /******** Firefox ********/
-  /*
+ 
   input[type="range"]::-moz-range-track {
-    position: relative;
-    background: hsl(174, 77%, 80%);
+    background: transparent;
     height: var(--altura-linea);
-    border-radius: 30px;
   }
-*/
+
   
 
   /* el boton */
